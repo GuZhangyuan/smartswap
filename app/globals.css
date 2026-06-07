@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Aptos", "Segoe UI", sans-serif;
+  --ink: #1f2529;
+  --paper: #f7f3ea;
+  --panel: #fffaf0;
+  --surface: #ffffff;
+  --line: #d8cdbb;
+  --muted: #6e6a62;
+  --accent: #0f766e;
+  --accent-strong: #0b4d49;
+  --signal: #c76b43;
+  --positive: #0f766e;
+  --warning: #9a6a1f;
+  --danger: #b24a33;
+  --shadow-color: rgba(65, 48, 28, 0.14);
+  --control-bg: rgba(255, 255, 255, 0.82);
+  --wash-a: rgba(199, 107, 67, 0.15);
+  --wash-b: rgba(15, 118, 110, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--paper);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  background: var(--paper);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.22);
+}
+
+.ledger-border {
+  border: 1px solid var(--line);
+}
+
+.theme-shell {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 4%, var(--wash-a), transparent 24rem),
+    radial-gradient(circle at 88% 18%, var(--wash-b), transparent 22rem),
+    linear-gradient(90deg, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    var(--paper);
+  background-size: auto, auto, 28px 28px, 28px 28px, auto;
+}
+
+[data-theme="dark"] {
+  --ink: #f4f4ef;
+  --paper: #101113;
+  --panel: #181a1d;
+  --surface: #202226;
+  --line: #3a3d43;
+  --muted: #a9aaa6;
+  --accent: #f4f4ef;
+  --accent-strong: #ffffff;
+  --signal: #d6d2c8;
+  --positive: #f4f4ef;
+  --warning: #d6d2c8;
+  --danger: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --control-bg: rgba(24, 26, 29, 0.84);
+  --wash-a: rgba(244, 244, 239, 0.12);
+  --wash-b: rgba(244, 244, 239, 0.06);
+}
+
+.glass-control {
+  background: var(--control-bg);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 44px var(--shadow-color);
+}
+
+.panel-depth {
+  box-shadow: 0 22px 70px var(--shadow-color);
+}
+
+.hairline-accent {
+  position: relative;
+}
+
+.hairline-accent::before {
+  background: var(--ink);
+  content: "";
+  height: 1px;
+  left: 0;
+  opacity: 0.45;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
